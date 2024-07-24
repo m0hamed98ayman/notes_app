@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/widgets/buttom_sheet.dart';
 import 'package:notes_app/widgets/custom_appbar.dart';
 import 'package:notes_app/widgets/custom_list_view.dart';
 
@@ -9,10 +10,17 @@ class NotesViewPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: RawMaterialButton(
-         padding:const EdgeInsets.all(18.0),
+        padding: const EdgeInsets.all(18.0),
         fillColor: Colors.cyan,
         shape: const CircleBorder(),
-        onPressed: () {},
+        onPressed: () {
+          showModalBottomSheet(
+            context: context,
+            builder:(context){
+              return const AddButtomSheet();
+            } ,
+          );
+        },
         child: const Icon(
           Icons.add,
         ),
@@ -24,7 +32,7 @@ class NotesViewPage extends StatelessWidget {
           children: [
             SizedBox(height: 35),
             CustomAppBar(),
-            SizedBox(height: 30),
+            SizedBox(height: 5),
             Expanded(child: CardListView()),
           ],
         ),
