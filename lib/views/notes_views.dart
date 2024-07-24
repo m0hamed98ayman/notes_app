@@ -11,7 +11,7 @@ class NotesViewPage extends StatelessWidget {
     return Scaffold(
       floatingActionButton: RawMaterialButton(
         padding: const EdgeInsets.all(18.0),
-        fillColor: Colors.cyan,
+        fillColor:  const Color(0xff60eee2),
         shape: const CircleBorder(),
         onPressed: () {
         showModalBottomSheet  (

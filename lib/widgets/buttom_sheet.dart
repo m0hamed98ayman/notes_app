@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/widgets/custom_button.dart';
 import 'package:notes_app/widgets/custom_text_field.dart';
 
 class AddButtomSheet extends StatelessWidget {
@@ -19,10 +20,12 @@ class AddButtomSheet extends StatelessWidget {
                 hintText: 'title',
               ),
               SizedBox(height: 15),
-                 CustomTextField(
+              CustomTextField(
                 hintText: 'title',
                 maxLines: 5,
               ),
+              SizedBox(height: 70),
+              CustomButton()
             ],
           ),
         ));
