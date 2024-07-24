@@ -11,22 +11,26 @@ class AddButtomSheet extends StatelessWidget {
         color: const Color(0xff303030),
         child: const Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.0),
-          child: Column(
-            children: [
-              SizedBox(
-                height: 32,
-              ),
-              CustomTextField(
-                hintText: 'title',
-              ),
-              SizedBox(height: 15),
-              CustomTextField(
-                hintText: 'title',
-                maxLines: 5,
-              ),
-              SizedBox(height: 70),
-              CustomButton()
-            ],
+          child: SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 32,
+                ),
+                CustomTextField(
+                  hintText: 'title',
+                ),
+                SizedBox(height: 15),
+                CustomTextField(
+                  hintText: 'title',
+                  maxLines: 5,
+                ),
+                SizedBox(height: 50),
+                CustomButton(),
+                SizedBox(height: 20)
+              ],
+            ),
           ),
         ));
   }

@@ -34,7 +34,7 @@ class NotesViewPage extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(height: 35),
-            CustomAppBar(),
+            CustomAppBar(text: 'Notes',ic: Icons.search,),
             SizedBox(height: 5),
             Expanded(child: CardListView()),
           ],
