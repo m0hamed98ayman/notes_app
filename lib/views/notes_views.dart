@@ -14,9 +14,12 @@ class NotesViewPage extends StatelessWidget {
         fillColor: Colors.cyan,
         shape: const CircleBorder(),
         onPressed: () {
-          showModalBottomSheet(
+        showModalBottomSheet  (
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16)
+            ),
             context: context,
-            builder:(context){
+            builder:(BuildContext context){
               return const AddButtomSheet();
             } ,
           );
