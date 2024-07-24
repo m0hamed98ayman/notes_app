@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/widgets/custom_appbar.dart';
-import 'package:notes_app/widgets/custom_card.dart';
+import 'package:notes_app/widgets/custom_list_view.dart';
 
 class NotesViewPage extends StatelessWidget {
   const NotesViewPage({super.key});
@@ -16,7 +16,7 @@ class NotesViewPage extends StatelessWidget {
             SizedBox(height: 35),
             CustomAppBar(),
             SizedBox(height: 30),
-            CustomCard()
+            Expanded(child: CardListView()),
           ],
         ),
       ),
