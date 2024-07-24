@@ -7,9 +7,18 @@ class NotesViewPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Color(0xff303030),
-      body: Padding(
+    return Scaffold(
+      floatingActionButton: RawMaterialButton(
+         padding:const EdgeInsets.all(18.0),
+        fillColor: Colors.cyan,
+        shape: const CircleBorder(),
+        onPressed: () {},
+        child: const Icon(
+          Icons.add,
+        ),
+      ),
+      backgroundColor: const Color(0xff303030),
+      body: const Padding(
         padding: EdgeInsets.symmetric(horizontal: 24),
         child: Column(
           children: [
@@ -23,4 +32,3 @@ class NotesViewPage extends StatelessWidget {
     );
   }
 }
-
