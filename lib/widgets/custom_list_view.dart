@@ -8,7 +8,7 @@ class CardListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(itemBuilder:(context,index){
       return const Padding(
-        padding:  EdgeInsets.only(bottom: 20.0),
+        padding:  EdgeInsets.only(bottom: 10.0),
         child:  CustomCard(),
       );
     } );
