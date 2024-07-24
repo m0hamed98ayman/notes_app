@@ -8,15 +8,23 @@ class AddButtomSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         color: const Color(0xff303030),
-        child:const Padding(
-          padding:  EdgeInsets.symmetric(horizontal: 16.0),
-          child:  Column(
+        child: const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16.0),
+          child: Column(
             children: [
-              SizedBox(height: 32,),
-              CustomTextField()],
+              SizedBox(
+                height: 32,
+              ),
+              CustomTextField(
+                hintText: 'title',
+              ),
+              SizedBox(height: 15),
+                 CustomTextField(
+                hintText: 'title',
+                maxLines: 5,
+              ),
+            ],
           ),
         ));
   }
 }
-
-
