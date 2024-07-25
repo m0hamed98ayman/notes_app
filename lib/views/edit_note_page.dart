@@ -17,9 +17,11 @@ class EditNotePage extends StatelessWidget {
             CustomAppBar(text: 'Editnote', ic: Icons.check),
             SizedBox(height: 35),
             CustomTextField(hintText: 'titel'),
-                        SizedBox(height: 15),
-
-            CustomTextField(hintText: 'content',maxLines: 4,),
+            SizedBox(height: 15),
+            CustomTextField(
+              hintText: 'content',
+              maxLines: 4,
+            ),
           ],
         ),
       ),
