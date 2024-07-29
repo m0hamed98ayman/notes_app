@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:notes_app/widgets/add_note_form.dart';
 
 class AddButtomSheet extends StatelessWidget {
@@ -9,11 +12,25 @@ class AddButtomSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         color: const Color(0xff303030),
-        child: const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16.0),
+        child:  Padding(
+          padding:const EdgeInsets.symmetric(horizontal: 16.0),
           child: SingleChildScrollView(
             scrollDirection: Axis.vertical,
-            child: AddNoteForm(),
+            child: BlocConsumer<AddNoteCubit,AddNoteState>(
+              listener: (context,state) {
+                if (state is AddNoteSuccess){
+                  Navigator.pop(context);
+                }
+                if (state is AddNoteFailed){
+                  print ('failed  ${state.errMessage}');
+                }
+              },
+              builder: (context,state) {
+                return  ModalProgressHUD(
+                  inAsyncCall:state is AddNoteLoading? true :false ,
+                  child: const AddNoteForm(),);
+              },
+            ),
           ),
         ));
   }
